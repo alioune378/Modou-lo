@@ -2,11 +2,11 @@
 <!-- Prepared for a future approved public launch. Replace the domain, then remove noindex. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.netlify.app/</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://example.netlify.app/?lang=fr"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.netlify.app/?lang=en"/>
+    <loc>https://modoulo.netlify.app/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://modoulo.netlify.app/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://modoulo.netlify.app/?lang=en"/>
     <lastmod>2026-11-02</lastmod>
   </url>
-  <url><loc>https://example.netlify.app/#/histoire</loc><lastmod>2026-11-02</lastmod></url>
-  <url><loc>https://example.netlify.app/#/concept</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://modoulo.netlify.app/#/histoire</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://modoulo.netlify.app/#/concept</loc><lastmod>2026-11-02</lastmod></url>
 </urlset>

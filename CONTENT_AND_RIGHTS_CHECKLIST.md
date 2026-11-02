@@ -60,5 +60,5 @@ Do not publish totals from promotional posters until they are confirmed.
 - [ ] Media kit PDF.
 - [ ] Youth programmes: create a real organisation before enabling applications, donations or payments.
 - [ ] Merchandise: brand licence and an e-commerce provider (e.g. Shopify or Snipcart) before any sale.
-- [ ] Domain, canonical URL (replace `example.netlify.app` in `index.html` and `public/sitemap.xml`), analytics with consent.
+- [ ] Domain, canonical URL (replace `modoulo.netlify.app` in `index.html` and `public/sitemap.xml`), analytics with consent.
 - [ ] Remove `noindex` (in `index.html`, `netlify.toml` and `robots.txt`) **only after everything above is approved.**
