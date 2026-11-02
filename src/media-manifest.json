@@ -1,0 +1,170 @@
+{
+ "01_champion_studio_portrait": {
+  "w": 960,
+  "h": 1278,
+  "widths": [
+   480,
+   960
+  ],
+  "fallback": 960
+ },
+ "02_training_arrival": {
+  "w": 670,
+  "h": 1194,
+  "widths": [
+   480,
+   670
+  ],
+  "fallback": 670
+ },
+ "03_traditional_ceremonial_attire": {
+  "w": 908,
+  "h": 746,
+  "widths": [
+   480,
+   908
+  ],
+  "fallback": 908
+ },
+ "04_formal_suit_event": {
+  "w": 1154,
+  "h": 1060,
+  "widths": [
+   480,
+   960,
+   1154
+  ],
+  "fallback": 960
+ },
+ "05_tracksuit_portrait": {
+  "w": 806,
+  "h": 992,
+  "widths": [
+   480,
+   806
+  ],
+  "fallback": 806
+ },
+ "06_training_blue_wrap": {
+  "w": 774,
+  "h": 1032,
+  "widths": [
+   480,
+   774
+  ],
+  "fallback": 774
+ },
+ "07_fight_record_poster": {
+  "w": 990,
+  "h": 1238,
+  "widths": [
+   480,
+   960,
+   990
+  ],
+  "fallback": 960
+ },
+ "08_black_white_athlete_portrait": {
+  "w": 1120,
+  "h": 1092,
+  "widths": [
+   480,
+   960,
+   1120
+  ],
+  "fallback": 960
+ },
+ "09_classic_fighting_pose": {
+  "w": 1176,
+  "h": 744,
+  "widths": [
+   480,
+   960,
+   1176
+  ],
+  "fallback": 960
+ },
+ "10_media_interview": {
+  "w": 1176,
+  "h": 882,
+  "widths": [
+   480,
+   960,
+   1176
+  ],
+  "fallback": 960
+ },
+ "11_crowned_victory_poster": {
+  "w": 800,
+  "h": 1000,
+  "widths": [
+   480,
+   800
+  ],
+  "fallback": 800
+ },
+ "12_red_hoodie_casual": {
+  "w": 500,
+  "h": 708,
+  "widths": [
+   480,
+   500
+  ],
+  "fallback": 500
+ },
+ "13_stadium_wrestling": {
+  "w": 1176,
+  "h": 684,
+  "widths": [
+   480,
+   960,
+   1176
+  ],
+  "fallback": 960
+ },
+ "14_senegal_jersey": {
+  "w": 832,
+  "h": 1476,
+  "widths": [
+   480,
+   832
+  ],
+  "fallback": 832
+ },
+ "15_moody_black_white_closeup": {
+  "w": 450,
+  "h": 450,
+  "widths": [
+   450
+  ],
+  "fallback": 450
+ },
+ "16_traditional_arena_attire": {
+  "w": 800,
+  "h": 1200,
+  "widths": [
+   480,
+   800
+  ],
+  "fallback": 800
+ },
+ "17_strength_training": {
+  "w": 774,
+  "h": 1032,
+  "widths": [
+   480,
+   774
+  ],
+  "fallback": 774
+ },
+ "18_arena_arms_crossed": {
+  "w": 1279,
+  "h": 1706,
+  "widths": [
+   480,
+   960,
+   1279
+  ],
+  "fallback": 960
+ }
+}

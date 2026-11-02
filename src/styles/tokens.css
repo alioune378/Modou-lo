@@ -1,0 +1,47 @@
+/* =========================================================================
+   THE LEGEND — design tokens (centralised brand styles)
+   ========================================================================= */
+:root {
+  /* Brand */
+  --obsidian: #090909;
+  --charcoal: #171717;
+  --charcoal-2: #1f1d1a;
+  --gold: #c9a35f;
+  --gold-hi: #e9c77b;
+  --gold-deep: #8e6f38;
+  --ivory: #f5f0e8;
+  --gray: #a5a5a5;
+  --line: rgba(201, 163, 95, 0.22);
+  --line-soft: rgba(245, 240, 232, 0.09);
+
+  /* Senegal accents — used sparingly */
+  --sn-green: #00853f;
+  --sn-yellow: #fdef42;
+  --sn-red: #e31b23;
+
+  --gold-text: linear-gradient(180deg, #f6e2ac 0%, #e9c77b 35%, #c9a35f 70%, #9b7a3f 100%);
+  --gold-sheen: linear-gradient(110deg, #8e6f38 0%, #c9a35f 30%, #f1d896 50%, #c9a35f 70%, #8e6f38 100%);
+
+  /* Type */
+  --f-display: 'Anton', 'Impact', 'Arial Narrow Bold', sans-serif;
+  --f-serif: 'Cormorant Garamond', 'Times New Roman', serif;
+  --f-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --fs-hero: clamp(3.6rem, 13vw, 11.5rem);
+  --fs-d1: clamp(2.6rem, 7.5vw, 6.2rem);
+  --fs-d2: clamp(2.2rem, 5.6vw, 4.6rem);
+  --fs-d3: clamp(1.7rem, 3.6vw, 2.8rem);
+  --fs-lede: clamp(1.02rem, 1.3vw, 1.18rem);
+
+  /* Space */
+  --gutter: clamp(16px, 5vw, 72px);
+  --section-y: clamp(80px, 12vw, 168px);
+  --radius: 2px;
+  --max: 1360px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.7, 0.1, 1);
+  --ease-cine: cubic-bezier(0.65, 0, 0.15, 1);
+
+  color-scheme: dark;
+}
