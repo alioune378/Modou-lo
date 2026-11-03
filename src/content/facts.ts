@@ -268,7 +268,7 @@ export const milestones: Milestone[] = [
       fr: 'Il conserve sa couronne face à Ama Baldé (5 novembre 2023), Boy Niang 2 (1er janvier 2024) et Siteu (24 novembre 2024).',
       en: 'He retained his crown against Ama Baldé (5 November 2023), Boy Niang 2 (1 January 2024) and Siteu (24 November 2024).',
     },
-    image: 'arenaArmsCrossed',
+    image: 'stadiumWrestling',
     source: 'soleilRois',
   },
   {
@@ -304,7 +304,7 @@ export const milestones: Milestone[] = [
       fr: 'Un chapitre à écrire avec lui.',
       en: 'A chapter to be written with him.',
     },
-    image: 'formalSuit',
+    image: 'interview',
     placeholder: true,
   },
 ];

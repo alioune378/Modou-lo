@@ -21,11 +21,13 @@ A cinematic black-and-gold "digital museum" experience, built with **React 18, V
 | 07 The man | `#homme` | Six editorial chapters, all marked *Contenu à valider*, plus a reserved slot for an exclusive interview. |
 | 08 Next generation | `#heritage-continue` | Programmes are labelled as **concepts**. Applications are disabled. |
 | 09 Xaragne Official | `#boutique` | Concept collection. There is no cart or checkout, and "Être informé" goes to the newsletter. |
-| 10 Partnerships | `#partenariats` | Partner categories, a disabled media-kit button, and three validated forms: partnership, appearance and press. |
+| 10 Partnerships | `#partenariats` | "Une légende. Une audience. Des opportunités.": verified career facts, labelled audience figures, press references, partnership formats, and a partnership inquiry form (plus appearance and press tabs). |
+| Executive dashboard | `#/espace-direction` | Demo preview of the brand-intelligence and sponsorship portal. See `PARTNERSHIP_PORTAL.md`. |
+| Media kit | `#/media-kit` | Four A4 pages with PDF export through the browser's print dialog. |
 | Biography page | `#/histoire` | Long-form story built from sourced chapters, plus the timeline. |
 | Concept & rights page | `#/concept` | The disclaimer, the fact sources, and the image-clearance list. |
 
-Languages: **French** (primary), **English**, and **Wolof**. The Wolof dictionary is intentionally empty and falls back to French, with a visible "translation pending" notice. Switching language keeps the current page (`?lang=` plus the hash route).
+Languages: **French** (primary) and **English**, per the Dalal Technologies standard. Switching language keeps the current page (`?lang=` plus the hash route).
 
 ---
 
@@ -58,7 +60,7 @@ For extra privacy, enable **Site protection → password** in Netlify.
 
 ### Instant preview (no install)
 
-`prebuilt-preview/` is a ready-made static build of the site, in demo form mode. Drag that folder onto **app.netlify.com/drop** to get a private preview URL in seconds, or serve it locally with `npx serve prebuilt-preview`. For real deployments, use the source build above.
+`prebuilt-preview/` is a ready-made static build of the site, in demo form mode, refreshed on 3 Nov 2026. Drag that folder onto **app.netlify.com/drop** to get a private preview URL in seconds, or serve it locally with `npx serve prebuilt-preview`. For real deployments, use the source build above.
 
 ### Forms
 
@@ -78,7 +80,8 @@ All forms have a honeypot field, a minimum fill-time check, accessible error mes
 | Achievement strip, fights, timeline, origin chapters, **sources** | `src/content/facts.ts` |
 | Videos, social links, "man" chapters, next-gen concepts, products, partner categories | `src/content/editorial.ts` |
 | Photos (crop focus, alt text, rights notes) | `src/content/media.ts` (see `MEDIA.md`) |
-| Interface text | `src/i18n/fr.ts`, `en.ts`, `wo.ts` |
+| Interface text | `src/i18n/fr.ts`, `en.ts` |
+| Partnership portal data, copy and metrics | `src/portal/data.ts`, `strings.ts` (see `PARTNERSHIP_PORTAL.md`) |
 | Colours, fonts, spacing | `src/styles/tokens.css` |
 
 **To add a fight**, append an object to `fights` in `facts.ts`. If you leave out `venue` or `result`, the site shows "À confirmer" for that field. **To add a video**, add `{ id, category, title, youtubeId, poster }` to `videos` in `editorial.ts`. The gallery switches from placeholder slots to real cards automatically.

@@ -107,7 +107,7 @@ export function Hero() {
 
       <Modal open={film} onClose={() => setFilm(false)} labelledBy="film-title" className="film-modal">
         <div className="film-stage">
-          <Img k="moodyCloseup" sizes="(max-width: 700px) 90vw, 640px" decorative />
+          <Img k="interview" sizes="(max-width: 700px) 90vw, 640px" decorative />
           <div className="film-veil" />
           <div className="film-copy">
             <p className="eyebrow">Xaragne TV</p>

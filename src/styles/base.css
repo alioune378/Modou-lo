@@ -8,7 +8,7 @@
 }
 html {
   -webkit-text-size-adjust: 100%;
-  scroll-padding-top: 80px;
+  scroll-padding-top: calc(84px + env(safe-area-inset-top, 0px));
 }
 body {
   margin: 0;
@@ -493,8 +493,8 @@ body::after {
   .brand-sub {
     display: none;
   }
-  .header-right .lang {
-    display: none;
+  .header-right {
+    gap: 8px;
   }
 }
 
@@ -530,8 +530,9 @@ body::after {
 }
 .fullnav nav {
   flex: 1;
-  display: flex;
-  align-items: center;
+  display: grid;
+  align-content: center;
+  gap: 28px;
   padding-block: 28px;
 }
 .fullnav ol {
@@ -580,20 +581,6 @@ body::after {
   }
 }
 
-.wo-notice {
-  position: fixed;
-  z-index: 60;
-  left: 50%;
-  bottom: max(14px, env(safe-area-inset-bottom));
-  transform: translateX(-50%);
-  width: min(560px, calc(100% - 32px));
-  background: rgba(23, 23, 23, 0.95);
-  border: 1px solid var(--line);
-  padding: 12px 16px;
-  font-size: 0.82rem;
-  color: var(--ivory);
-  text-align: center;
-}
 
 /* ---------- Modal ---------- */
 .modal {
@@ -841,4 +828,89 @@ body::after {
 
 .fullnav[hidden] {
   display: none;
+}
+
+/* ---------- Language switch: discreet FR | EN ---------- */
+.lang {
+  border: 0;
+  background: none;
+  padding: 0;
+  gap: 0;
+  align-items: center;
+}
+.lang button {
+  min-width: 36px;
+  min-height: 44px;
+  border-radius: 0;
+  position: relative;
+  color: rgba(245, 240, 232, 0.55);
+}
+.lang button + button::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15px;
+  bottom: 15px;
+  width: 1px;
+  background: var(--line);
+}
+.lang button.is-active {
+  background: none;
+  color: var(--gold-hi);
+}
+.lang button.is-active::after {
+  content: '';
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  bottom: 10px;
+  height: 1px;
+  background: var(--gold);
+}
+.lang button:hover {
+  color: var(--ivory);
+}
+
+/* ---------- Full menu: seven primary items, chapters grouped below ---------- */
+.fullnav li button.is-cta {
+  color: var(--gold-hi);
+}
+.fullnav-more {
+  display: grid;
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-soft);
+  animation: fadeUp 0.7s var(--ease) both;
+  animation-delay: calc(200ms + var(--i) * 45ms);
+}
+.fullnav-more ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 22px;
+}
+.fullnav-more li {
+  animation: none;
+}
+.fullnav .fullnav-more li button,
+.fullnav .fullnav-more li a {
+  font-family: var(--f-sans);
+  text-transform: none;
+  font-size: 0.98rem;
+  letter-spacing: 0.02em;
+  color: rgba(245, 240, 232, 0.72);
+  min-height: 44px;
+  align-items: center;
+  width: auto;
+}
+.fullnav .fullnav-more li button:hover,
+.fullnav .fullnav-more li a:hover {
+  transform: none;
+  color: var(--gold-hi);
+}
+
+/* Section anchors clear the fixed header, including Safari's safe area. */
+section[id],
+[id='demande-partenariat'],
+[id='newsletter'] {
+  scroll-margin-top: calc(84px + env(safe-area-inset-top, 0px));
 }

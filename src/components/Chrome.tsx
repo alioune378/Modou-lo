@@ -4,17 +4,28 @@ import type { Dict } from '../i18n/fr';
 import { goToSection, navigate, useScrollLock } from '../lib/hooks';
 import { FlagRule, Icon, Wordmark } from './ui';
 
+/** Primary navigation: seven destinations. "Accueil" scrolls to the top. */
 export const NAV: { id: string; key: keyof Dict }[] = [
-  { id: 'heritage', key: 'nav.legacy' },
-  { id: 'origines', key: 'nav.origins' },
-  { id: 'combats', key: 'nav.glory' },
-  { id: 'chronologie', key: 'nav.timeline' },
+  { id: 'top', key: 'nav.home' },
+  { id: 'origines', key: 'nav.story' },
+  { id: 'combats', key: 'nav.career' },
   { id: 'peuple', key: 'nav.people' },
-  { id: 'xaragne-tv', key: 'nav.tv' },
+  { id: 'xaragne-tv', key: 'nav.media' },
+  { id: 'partenariats', key: 'nav.partners' },
+  { id: 'boutique', key: 'nav.shop' },
+];
+
+/** Secondary museum chapters and pages, grouped below the primary menu. */
+export const CHAPTERS: { id: string; key: keyof Dict }[] = [
+  { id: 'heritage', key: 'nav.legacy' },
+  { id: 'chronologie', key: 'nav.timeline' },
   { id: 'homme', key: 'nav.man' },
   { id: 'heritage-continue', key: 'nav.next' },
-  { id: 'boutique', key: 'nav.shop' },
-  { id: 'partenariats', key: 'nav.partners' },
+];
+export const PAGES: { href: string; key: keyof Dict }[] = [
+  { href: '#/histoire', key: 'nav.bio' },
+  { href: '#/media-kit', key: 'nav.kit' },
+  { href: '#/espace-direction', key: 'nav.portal' },
 ];
 
 function LangSwitch({ onPick }: { onPick?: () => void }) {
@@ -63,6 +74,11 @@ export function Header() {
 
   const go = (id: string) => {
     setOpen(false);
+    if (id === 'top') {
+      if (window.location.hash.startsWith('#/') && window.location.hash !== '#/') navigate('/');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
     goToSection(id);
   };
 
@@ -87,7 +103,7 @@ export function Header() {
           <span className="brand-sub">The Legend</span>
         </a>
         <nav className="nav-desktop" aria-label="Principal">
-          {NAV.slice(0, 6).map((n) => (
+          {NAV.filter((n) => n.id !== 'top' && n.id !== 'partenariats').map((n) => (
             <button key={n.id} type="button" onClick={() => go(n.id)}>
               {t(n.key)}
             </button>
@@ -112,28 +128,36 @@ export function Header() {
             {Icon.close}
           </button>
         </div>
-        <nav aria-label="Sections">
+        <nav aria-label="Sections" className="fullnav-nav">
           <ol>
             {NAV.map((n, i) => (
               <li key={n.id} style={{ ['--i' as string]: i }}>
-                <button type="button" onClick={() => go(n.id)}>
+                <button type="button" onClick={() => go(n.id)} className={n.id === 'partenariats' ? 'is-cta' : undefined}>
                   <span className="num">{String(i + 1).padStart(2, '0')}</span>
                   {t(n.key)}
                 </button>
               </li>
             ))}
-            <li style={{ ['--i' as string]: NAV.length }}>
-              <a
-                href="#/histoire"
-                onClick={() => {
-                  setOpen(false);
-                }}
-              >
-                <span className="num">—</span>
-                {t('nav.story')}
-              </a>
-            </li>
           </ol>
+          <div className="fullnav-more" style={{ ['--i' as string]: NAV.length }}>
+            <p className="eyebrow">{t('nav.chapters')}</p>
+            <ul>
+              {CHAPTERS.map((c) => (
+                <li key={c.id}>
+                  <button type="button" onClick={() => go(c.id)}>
+                    {t(c.key)}
+                  </button>
+                </li>
+              ))}
+              {PAGES.map((p) => (
+                <li key={p.href}>
+                  <a href={p.href} onClick={() => setOpen(false)}>
+                    {t(p.key)}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </nav>
         <div className="fullnav-foot">
           <LangSwitch onPick={() => undefined} />
@@ -157,7 +181,9 @@ export function Footer() {
         <p className="footer-disclaimer">{t('footer.disclaimer')}</p>
         <div className="footer-links">
           <a href="#/concept">{t('footer.concept')}</a>
-          <a href="#/histoire">{t('nav.story')}</a>
+          <a href="#/histoire">{t('nav.bio')}</a>
+          <a href="#/media-kit">{t('nav.kit')}</a>
+          <a href="#/espace-direction">{t('nav.portal')}</a>
           <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             {t('footer.top')} ↑
           </button>

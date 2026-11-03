@@ -1,37 +1,33 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { fr, type Dict } from './fr';
 import { en } from './en';
-import { wo } from './wo';
 
-export type Lang = 'fr' | 'en' | 'wo';
+export type Lang = 'fr' | 'en';
 export const LANGS: { code: Lang; label: string; short: string }[] = [
   { code: 'fr', label: 'Français', short: 'FR' },
   { code: 'en', label: 'English', short: 'EN' },
-  { code: 'wo', label: 'Wolof', short: 'WO' },
 ];
 
 /** Structured, localizable content. French is the source of truth and the fallback. */
-export type Localized = { fr: string; en?: string; wo?: string };
+export type Localized = { fr: string; en?: string };
 
-const dicts: Record<Lang, Partial<Dict>> = { fr, en, wo };
+const dicts: Record<Lang, Partial<Dict>> = { fr, en };
 
 type Ctx = {
   lang: Lang;
   setLang: (l: Lang) => void;
   t: (key: keyof Dict) => string;
   L: (value: Localized) => string;
-  /** True when the active language has no reviewed translation for some content. */
-  pending: boolean;
 };
 
 const I18nContext = createContext<Ctx | null>(null);
 
 function initialLang(): Lang {
   const q = new URLSearchParams(window.location.search).get('lang');
-  if (q === 'fr' || q === 'en' || q === 'wo') return q;
+  if (q === 'fr' || q === 'en') return q;
   try {
     const s = localStorage.getItem('xl-lang');
-    if (s === 'fr' || s === 'en' || s === 'wo') return s;
+    if (s === 'fr' || s === 'en') return s;
   } catch {
     /* storage unavailable */
   }
@@ -50,13 +46,6 @@ const META: Record<Lang, { title: string; description: string; locale: string }>
     description:
       'An independent digital concept about Modou Lô (Xaragne Lô), a defining figure of Senegalese wrestling. Private proposal by Dalal Technologies — not an official website.',
     locale: 'en_US',
-  },
-  wo: {
-    // Wolof metadata pending native-speaker review: French is served meanwhile.
-    title: 'Modou Lô — Xaragne Lô | The Legend · Concept indépendant',
-    description:
-      'Concept digital indépendant consacré à Modou Lô (Xaragne Lô). Traduction wolof en attente de validation.',
-    locale: 'wo_SN',
   },
 };
 
@@ -91,7 +80,6 @@ export function I18nProvider({ children }: { children: ReactNode }) {
       setLang,
       t: (key) => (d[key] ?? fr[key]) as string,
       L: (v) => v[lang] ?? v.fr,
-      pending: lang === 'wo',
     };
   }, [lang, setLang]);
 
