@@ -187,18 +187,6 @@ export function Modal({
   );
 }
 
-/* ------------------------------------------------------- Pending Wolof note */
-
-export function WolofNotice() {
-  const { pending, t } = useI18n();
-  if (!pending) return null;
-  return (
-    <div className="wo-notice" role="status">
-      {t('wo.pending')}
-    </div>
-  );
-}
-
 /* ---------------------------------------------------------------- Icons */
 
 export const Icon = {

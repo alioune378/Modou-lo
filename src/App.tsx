@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { Footer, Header } from './components/Chrome';
-import { WolofNotice } from './components/ui';
 import { useHashRoute } from './lib/hooks';
 import { Concept, Home, Story } from './pages/Pages';
 import { FightDetail } from './sections/Glory';
@@ -17,7 +16,6 @@ export function App() {
   return (
     <>
       <Header />
-      <WolofNotice />
       <main id="main" tabIndex={-1}>
         {page === 'story' ? <Story /> : page === 'concept' ? <Concept /> : <Home />}
       </main>
