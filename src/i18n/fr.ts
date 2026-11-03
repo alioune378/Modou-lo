@@ -191,7 +191,6 @@ export const fr = {
     'Une biographie en construction. Seuls les faits sourcés sont présentés ; chaque chapitre manquant sera écrit avec des informations confirmées.',
   'story.back': 'Retour à l’accueil',
 
-  'wo.pending': 'Traduction wolof en attente de validation par un locuteur natif — contenu affiché en français.',
   'motto': 'On peut perdre une couronne. On ne perd jamais sa légende.',
   'common.source': 'Source',
   'common.illustrative': 'Photo d’illustration',
