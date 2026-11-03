@@ -14,7 +14,7 @@ export const FORMS_MODE: 'demo' | 'netlify' = import.meta.env.VITE_FORMS_MODE ==
 export type Field = {
   name: string;
   label: keyof Dict;
-  type?: 'text' | 'email' | 'tel' | 'date' | 'textarea' | 'select' | 'checkbox';
+  type?: 'text' | 'email' | 'tel' | 'url' | 'date' | 'textarea' | 'select' | 'checkbox';
   required?: boolean;
   minLength?: number;
   options?: { value: string; label: string }[];
@@ -25,17 +25,21 @@ export type Field = {
 type Status = 'idle' | 'invalid' | 'sending' | 'sent' | 'demo' | 'error' | 'fast';
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const URLISH = /^(https?:\/\/)?[\w-]+(\.[\w-]+)+([/?#]\S*)?$/i;
 
 export function Form({
   name,
   fields,
   submitLabel = 'form.submit',
   compact,
+  note,
 }: {
   name: string;
   fields: Field[];
   submitLabel?: keyof Dict;
   compact?: boolean;
+  /** Optional notice shown above the submit button (e.g. privacy). */
+  note?: keyof Dict;
 }) {
   const { t } = useI18n();
   const [errors, setErrors] = useState<Record<string, keyof Dict>>({});
@@ -53,6 +57,7 @@ export function Form({
       }
       if (f.required && !v) e[f.name] = 'form.required';
       else if (f.type === 'email' && v && !EMAIL.test(v)) e[f.name] = 'form.invalidEmail';
+      else if (f.type === 'url' && v && !URLISH.test(v)) e[f.name] = 'form.invalidUrl';
       else if (f.minLength && v && v.length < f.minLength) e[f.name] = 'form.tooShort';
     }
     return e;
@@ -163,7 +168,7 @@ export function Form({
                   ))}
                 </select>
               ) : (
-                <input {...common} type={f.type ?? 'text'} inputMode={f.type === 'email' ? 'email' : f.type === 'tel' ? 'tel' : undefined} />
+                <input {...common} type={f.type ?? 'text'} inputMode={f.type === 'email' ? 'email' : f.type === 'tel' ? 'tel' : f.type === 'url' ? 'url' : undefined} />
               )}
               {err && (
                 <p className="field-err" id={describedBy}>
@@ -174,6 +179,7 @@ export function Form({
           );
         })}
       </div>
+      {note && <p className="form-note small muted">{t(note)}</p>}
       <div className="form-foot">
         <button className="btn btn-gold" type="submit" disabled={status === 'sending'}>
           {t(status === 'sending' ? 'form.sending' : submitLabel)}

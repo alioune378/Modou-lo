@@ -49,7 +49,6 @@ Do not publish totals from promotional posters until they are confirmed.
 
 - [ ] Approve all editorial copy, including the motto "On peut perdre une couronne. On ne perd jamais sa légende." It is original copy and is not attributed to him.
 - [ ] Get an approved personal statement or interview for "L'homme derrière la légende".
-- [ ] Have a **native speaker write and review the Wolof translation** (`src/i18n/wo.ts`).
 - [ ] Proofread the English.
 
 ## 6. Operations
@@ -57,7 +56,9 @@ Do not publish totals from promotional posters until they are confirmed.
 - [ ] Choose a form destination: switch `VITE_FORMS_MODE` to `netlify` and configure notifications.
 - [ ] Write a privacy policy and data-handling notice for the forms and newsletter. Check the applicable data-protection law, such as Senegal's Law 2008-12 and GDPR for diaspora visitors.
 - [ ] Moderation process and owner for the supporter wall.
-- [ ] Media kit PDF.
+- [ ] Media kit: approve its content, add the management contact, and remove the demo notice.
+- [ ] Partnership portal: verify official social accounts and replace the screenshot figures (≈265 k Instagram, ≈82 k Facebook) with verified, dated numbers.
+- [ ] Before any private data appears in the dashboard: real sign-in, server-side authorisation and secure analytics connections (see `PARTNERSHIP_PORTAL.md`).
 - [ ] Youth programmes: create a real organisation before enabling applications, donations or payments.
 - [ ] Merchandise: brand licence and an e-commerce provider (e.g. Shopify or Snipcart) before any sale.
 - [ ] Domain, canonical URL (replace `modoulo.netlify.app` in `index.html` and `public/sitemap.xml`), analytics with consent.

@@ -6,6 +6,7 @@ import { Icon, Img, Reveal, SourceLink, Wordmark } from '../components/ui';
 import { Hero } from '../sections/Hero';
 import { Legacy, Origins } from '../sections/Legacy';
 import { Glory } from '../sections/Glory';
+import { ReignInterlude } from '../sections/ReignInterlude';
 import { Timeline } from '../sections/Timeline';
 import { ManBeyond, NextGeneration, People, XaragneTV } from '../sections/Community';
 import { Partnerships, Shop } from '../sections/Business';
@@ -18,6 +19,7 @@ export function Home() {
       <Hero />
       <Legacy />
       <Origins />
+      <ReignInterlude />
       <Glory />
       <Timeline />
       <section className="interlude" aria-label={t('motto')}>

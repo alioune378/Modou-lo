@@ -8,17 +8,16 @@
     <!-- Private demo: never index. Remove only after rights & approval are secured. -->
     <meta name="robots" content="noindex, nofollow, noarchive" />
     <meta name="theme-color" content="#090909" />
-    <link rel="canonical" href="https://example.netlify.app/" />
-    <link rel="alternate" hreflang="fr" href="https://example.netlify.app/?lang=fr" />
-    <link rel="alternate" hreflang="en" href="https://example.netlify.app/?lang=en" />
-    <link rel="alternate" hreflang="wo" href="https://example.netlify.app/?lang=wo" />
+    <link rel="canonical" href="https://modoulo.netlify.app/" />
+    <link rel="alternate" hreflang="fr" href="https://modoulo.netlify.app/?lang=fr" />
+    <link rel="alternate" hreflang="en" href="https://modoulo.netlify.app/?lang=en" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_SN" />
     <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:title" content="Modou Lô — Xaragne Lô | The Legend (concept indépendant)" />
     <meta property="og:description" content="L'homme. Le champion. L'héritage. Une proposition digitale indépendante, non officielle." />
-    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:image" content="https://modoulo.netlify.app/og-image.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -49,6 +48,7 @@
         "creator": { "@type": "Organization", "name": "Dalal Technologies" }
       }
     </script>
+  <link rel="stylesheet" href="/assets/main.css" />
   </head>
   <body>
     <noscript>
@@ -60,8 +60,9 @@
     <!-- Static form definitions so Netlify Forms can detect them at deploy time.
          They are only used when VITE_FORMS_MODE=netlify. -->
     <form name="partenariat" data-netlify="true" netlify-honeypot="bot-field" hidden>
-      <input name="bot-field" /><input name="name" /><input name="company" /><input name="email" />
-      <input name="phone" /><input name="category" /><input name="budget" /><textarea name="message"></textarea>
+      <input name="bot-field" /><input name="company" /><input name="contact" /><input name="email" />
+      <input name="type" /><input name="collaboration" /><input name="dates" /><input name="budget" /><input name="website" />
+      <textarea name="message"></textarea><input name="consent" />
     </form>
     <form name="apparition" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input name="bot-field" /><input name="name" /><input name="company" /><input name="email" />
@@ -80,6 +81,6 @@
     </form>
 
     <div id="root"></div>
-    <link rel="stylesheet" href="/assets/main.css"><script type="module" src="/assets/main.js"></script>
+    <script type="module" src="/assets/main.js"></script>
   </body>
 </html>

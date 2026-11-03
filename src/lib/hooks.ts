@@ -73,7 +73,7 @@ export function useReveal<T extends HTMLElement>() {
   return ref;
 }
 
-const LOCALE: Record<Lang, string> = { fr: 'fr-FR', en: 'en-GB', wo: 'fr-FR' };
+const LOCALE: Record<Lang, string> = { fr: 'fr-FR', en: 'en-GB' };
 
 export function formatDate(iso: string, lang: Lang) {
   if (!iso) return '';
